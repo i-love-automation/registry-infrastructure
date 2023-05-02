@@ -3,7 +3,7 @@ locals {
     "target_image" = {
       hcl       = false
       sensitive = false
-      value     = "${aws_ecr_repository.api.repository_url}:${data.aws_ecr_image.api_image.image_tags[0]}"
+      value     = local.api_image_url
     }
   }
 }
